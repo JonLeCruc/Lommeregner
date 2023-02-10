@@ -1,2 +1,3 @@
 # Lommeregner
-lommeregner
+Lavet med Bootstrap og Javascript
+
