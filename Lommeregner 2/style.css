@@ -1,9 +1,12 @@
-   body {
+/*Sætter baggrunden af siden til en linear-gradient
+har sat background-attachment til fixed, hvilket gør
+at farverne ikke gentager sig, men at de fylder hele siden.*/
+body {
     background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
-    background-repeat: no-repeat;
     background-attachment: fixed;
   }
 
+  /*Styling af containeren (selve lommeregneren)*/
   .container {
     max-width: 350px;
     margin: 0 auto;
@@ -13,6 +16,7 @@
     background-color: #666;
   }
   
+  /*Styling af knapperne på lommeregneren*/
   button {
     width: 100%;
     margin: 5px;
@@ -27,10 +31,13 @@
     background-color: #333;
   }
   
+  /*Giver en effekt til knapperne, som ændrer deres farve
+  når cursoren hover over dem.*/
   button:hover {
     background-color: #4a4a4a;
   }
   
+  /*Styling til input/udregning felterne*/
   input {
     width: 100%;
     margin: 5px 0;
@@ -44,15 +51,19 @@
     background-color: #444;
     color: #f2f2f2;
   }
+
+  /*dette er id'et på RAD knappen*/
   #button{
     background-color: #333;
     color: #0000fa;
   }
 
+  /*styling til clear knappen*/
   #clear{
     background-color: #FF9500;
   }
 
+  /*Styling til H1*/
   h1{
     color: #f2f2f2;
   }

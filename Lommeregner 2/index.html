@@ -17,23 +17,29 @@
     <h1 class="text-center">Lommeregner</h1> 
     <div class="container">
         <div class="row">
+            <!--Laver 2 columns med lg 12 som bruges til udregning og output af mine udregninger.-->
             <div class="col-lg-12">
                 <input type="text" name="udregning" id="udregning" readonly>
             </div>
             <div class="col-lg-12">
                 <input type="text" name="output" id="output" readonly>
             </div>
-            <!-- <div class="col-lg-offset-12 nopadding">
-                <h1 class="Place">History</h1>
-            </div> -->
         </div>
         <div>
             <div class="row">
                 <div class="col-lg-3">
+                    <!--changestate knap med en default værdi af "RAD", kort for radiant.
+                    ved tryk på denne knap skiftes værdien til "DEG" kort for degrees.
+                    Dette bruges til funktionerne sin, cos og tan, og værdien af knappen
+                    bestemmer hvilken formel der skal bruges til udregningen.-->
                     <button type="button" id="button" onclick="changeState()">RAD</button>
 
                 </div>
             </div>
+            <!--Laver en masse rows som hver især indeholder nogle columns, hvori
+            jeg har placeret de forskellige knapper til min lommeregner.
+            hver column har jeg sat til -3, siden der er 4 columns i hver row, 
+            og fordi det helst skal gå op i 12.-->
             <div class="row">
                 <div class="col-lg-3">
                     <button id="sin" onclick="UserClickButton('Sin')">Sin</button>
