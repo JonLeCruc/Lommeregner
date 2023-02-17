@@ -6,159 +6,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 <style>
-    * {
-  border-radius: 0 !important;
-}
-    .nopadding{
-        padding: 2px;
-    }
-    .btn_font{
-        font-size: 30px;
-        border: 2px solid black;
-    }
-    .btn_RD{
-        border:2px solid black;
-        font-size: 15px;
-    }
-    .Place{
-        padding: 10px;
-    }
     
 </style>
-    <title>Calculator</title>
+    <title>Lommeregner</title>
 </head>
 
 <body>
     <h1 class="text-center">Lommeregner</h1> 
-    <div class="container" style="padding: 30px;border: 4px solid black;margin-top: 50px;">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12 nopadding">
-                <input type="text" name="udregning" id="udregning" class="form-control" onclick="this.select();" style="padding: 10px;font-size:30px;height: 50px;text-align: end;border: 1px solid black;">
+            <div class="col-lg-12">
+                <input type="text" name="udregning" id="udregning" readonly>
             </div>
-            <div class="col-lg-12 nopadding">
-                <input type="text" name="output" id="output" class="form-control" onclick="this.select();" style="padding: 10px;font-size:30px;height: 50px;text-align: end;margin-top: 10px;border: 1px solid black;" /*readonly*/>
+            <div class="col-lg-12">
+                <input type="text" name="output" id="output" readonly>
             </div>
+            <!-- <div class="col-lg-offset-12 nopadding">
+                <h1 class="Place">History</h1>
+            </div> -->
         </div>
-        <div style="    margin-top: 20px; ">
+        <div>
             <div class="row">
-                <div class="col-lg-3 nopadding">
-                    <button type="button" class="btn btn-primary btn_RD" id="button" onclick="changeState()">RAD</button>
+                <div class="col-lg-3">
+                    <button type="button" id="button" onclick="changeState()">RAD</button>
 
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 nopadding">
-                    <button id="sin" class="btn btn-light btn-block btn_font" onclick="UserClickButton('Sin')">Sin</button>
+                <div class="col-lg-3">
+                    <button id="sin" onclick="UserClickButton('Sin')">Sin</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="cos" class="btn btn-light btn-block btn_font" onclick="UserClickButton('Cos')">Cos</button>
+                <div class="col-lg-3">
+                    <button id="cos" onclick="UserClickButton('Cos')">Cos</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="tan" class="btn btn-light btn-block btn_font" onclick="UserClickButton('Tan')">Tan</button>
+                <div class="col-lg-3">
+                    <button id="tan" onclick="UserClickButton('Tan')">Tan</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="po2" class="btn btn-light btn-block btn_font" onclick="UserClickButton('^2')">x^2</button>
+                <div class="col-lg-3">
+                    <button id="po2" onclick="UserClickButton('^2')">x^2</button>
                 </div>
                 
             </div>
             <div class="row">
-                <div class="col-lg-3 nopadding">
-                    <button id="Po" class="btn btn-light btn-block btn_font" onclick="UserClickButton('po')">(</button>
+                <div class="col-lg-3">
+                    <button id="Po" onclick="UserClickButton('po')">(</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="Pc" class="btn btn-light btn-block btn_font" onclick="UserClickButton('pc')">)</button>
+                <div class="col-lg-3">
+                    <button id="Pc" onclick="UserClickButton('pc')">)</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="Square" class="btn btn-light btn-block btn_font" onclick="UserClickButton('√')">√</button>
+                <div class="col-lg-3">
+                    <button id="Square" onclick="UserClickButton('√')">√</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="Modulus" class="btn btn-light btn-block btn_font" onclick="UserClickButton('%')">Mod</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 nopadding">
-                    <button id="Delete" class="btn btn-light btn-block btn_font" onclick="backspace();" value="Backspace">⇤</button>
-                </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="caret" class="btn btn-light btn-block btn_font" onclick="UserClickButton('^')">^</button>
-                </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="Pi" class="btn btn-light btn-block btn_font" onclick="UserClickButton(Math.PI)">π</button>
-                </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="Percentage" class="btn btn-light btn-block btn_font" onclick="UserClickButton('％')">%</button>
+                <div class="col-lg-3">
+                    <button id="Modulus" onclick="UserClickButton('%')">Mod</button>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 nopadding">
-                    <button id="Et" class="btn btn-light btn-block btn_font" onclick="UserClickButton('1')">1</button>
+                <div class="col-lg-3">
+                    <button id="Delete" onclick="backspace();" value="Backspace">⇤</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="To" class="btn btn-light btn-block btn_font" onclick="UserClickButton('2')">2</button>
+                <div class="col-lg-3">
+                    <button id="caret" onclick="UserClickButton('^')">^</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="Tre" class="btn btn-light btn-block btn_font" onclick="UserClickButton('3')">3</button>
+                <div class="col-lg-3">
+                    <button id="Pi" onclick="UserClickButton(Math.PI)">π</button>
                 </div>
-                <div class="col-lg-3 nopadding">
-                    <button id="Plus" class="btn btn-light btn-block btn_font" onclick="UserClickButton('+')">+</button>
+                <div class="col-lg-3">
+                    <button id="Percentage" onclick="UserClickButton('％')">%</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <button id="Et" onclick="UserClickButton('1')">1</button>
+                </div>
+                <div class="col-lg-3">
+                    <button id="To" onclick="UserClickButton('2')">2</button>
+                </div>
+                <div class="col-lg-3">
+                    <button id="Tre" onclick="UserClickButton('3')">3</button>
+                </div>
+                <div class="col-lg-3">
+                    <button id="pmgd" onclick="UserClickButton('+')">+</button>
                 </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 nopadding">
-                        <button id="Fire" class="btn btn-light btn-block btn_font" onclick="UserClickButton('4')">4</button>
+                    <div class="col-lg-3">
+                        <button id="Fire" onclick="UserClickButton('4')">4</button>
                     </div>
-                    <div class="col-lg-3 nopadding">
-                        <button id="Fem" class="btn btn-light btn-block btn_font" onclick="UserClickButton('5')">5</button>
+                    <div class="col-lg-3">
+                        <button id="Fem" onclick="UserClickButton('5')">5</button>
                     </div>
-                    <div class="col-lg-3 nopadding">
-                        <button id="Seks" class="btn btn-light btn-block btn_font" onclick="UserClickButton('6')">6</button>
+                    <div class="col-lg-3">
+                        <button id="Seks" onclick="UserClickButton('6')">6</button>
                     </div>
-                    <div class="col-lg-3 nopadding">
-                        <button id="Minus" class="btn btn-light btn-block btn_font" onclick="UserClickButton('-')">-</button>
+                    <div class="col-lg-3">
+                        <button id="pmgd" onclick="UserClickButton('-')">-</button>
                     </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 nopadding">
-                            <button id="Syv" class="btn btn-light btn-block btn_font" onclick="UserClickButton('7')">7</button>
+                        <div class="col-lg-3">
+                            <button id="Syv" onclick="UserClickButton('7')">7</button>
                         </div>
-                        <div class="col-lg-3 nopadding">
-                            <button id="Otte" class="btn btn-light btn-block btn_font" onclick="UserClickButton('8')">8</button>
+                        <div class="col-lg-3">
+                            <button id="Otte" onclick="UserClickButton('8')">8</button>
                         </div>
-                        <div class="col-lg-3 nopadding">
-                            <button id="Ni" class="btn btn-light btn-block btn_font" onclick="UserClickButton('9')">9</button>
+                        <div class="col-lg-3">
+                            <button id="Ni" onclick="UserClickButton('9')">9</button>
                         </div>
-                        <div class="col-lg-3 nopadding">
-                            <button id="Gange" class="btn btn-light btn-block btn_font" onclick="UserClickButton('*')">*</button>
+                        <div class="col-lg-3">
+                            <button id="pmgd" onclick="UserClickButton('*')">*</button>
                         </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-3 nopadding">
-                                <button id="Komma" class="btn btn-light btn-block btn_font" onclick="UserClickButton('.')">.</button>
+                            <div class="col-lg-3">
+                                <button id="Komma" onclick="UserClickButton('.')">.</button>
                             </div>
-                            <div class="col-lg-3 nopadding">
-                                <button id="Nul" class="btn btn-light btn-block btn_font" onclick="UserClickButton('0')">0</button>
+                            <div class="col-lg-3">
+                                <button id="Nul" onclick="UserClickButton('0')">0</button>
                             </div>
-                            <div class="col-lg-3 nopadding">
-                                <button id="LigMed" class="btn btn-light btn-block btn_font" onclick="CalculateValue()">=</button>
+                            <div class="col-lg-3">
+                                <button id="LigMed" onclick="CalculateValue()">=</button>
                             </div>
-                            <div class="col-lg-3 nopadding">
-                                <button id="Divider" class="btn btn-light btn-block btn_font" onclick="UserClickButton('/')">÷</button>
+                            <div class="col-lg-3">
+                                <button id="pmgd" onclick="UserClickButton('/')">÷</button>
                             </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 nopadding">
-                                    <button class="btn btn-light btn-block btn_font" onclick="ClearData('')">C</button>
+                                <div class="col-lg-12">
+                                    <button id="clear" onclick="ClearData('')">C</button>
                                 </div>
                             </div>
+                            
                         
         </div>
 
     </div>
 
-        <div class="col">
-            <h1 class="Place">History</h1>
-        </div>
+        
     <script src="lommeregner.js"></script>
 </body>
 

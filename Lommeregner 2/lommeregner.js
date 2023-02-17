@@ -24,7 +24,7 @@ function UserClickButton(value){
         value=")";
     }
     if(value == '+' || value == '-' || value == '*' || value == '/' || value == '%' || value == '(' || value == ')' 
-    || value == '^' || value == '√'){
+    || value == '^' || value == '√' || value == '％' || value == '^2'){
         operatorPressed=true;
         clear=false;
     }
@@ -95,6 +95,7 @@ function CalculateValue(){
         if(button.innerHTML === "DEG"){
             radians = parseInt(input_box.value.split("Sin")[1]) * Math.PI/180;
             result = Math.sin(radians);
+            sinPressed = false;
         }
         else{
             result = Math.sin(parseInt(input_box.value.split("Sin")[1]))
@@ -105,6 +106,7 @@ function CalculateValue(){
         if(button.innerHTML === "DEG"){
             radians = parseInt(input_box.value.split("Cos")[1]) * Math.PI/180;
             result = Math.cos(radians);
+            cosPressed = false;
         }
         else{
             result = Math.cos(parseInt(input_box.value.split("Cos")[1]))
@@ -115,6 +117,7 @@ function CalculateValue(){
         if(button.innerHTML === "DEG"){
             radians = parseInt(input_box.value.split("Tan")[1]) * Math.PI/180;
             result = Math.tan(radians);
+            tanPressed = false;
         }
         else{
             result = Math.tan(parseInt(input_box.value.split("Tan")[1]))
@@ -161,8 +164,10 @@ Derefter bestemmer jeg at deres værdi skal være = output/udregnings længde - 
     var button = document.querySelector("#button");
     if (button.innerHTML === "RAD") {
         button.innerHTML = "DEG";
+        button.style.color = 'crimson';
     } else {
         button.innerHTML = "RAD";
+        button.style.color = 'blue';
     }
 }
 
